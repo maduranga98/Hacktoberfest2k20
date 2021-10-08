@@ -1,0 +1,36 @@
+import datetime
+e = datetime.datetime.now()
+products={'Fish Bun': 40,'Chicken Bun': 50,'Fish Patty': 40,'Vegetable Patty':35,'Egg Pastry':40,'Fish Roll':40,'Doughnut':50,'Eclairs':40,'Vegitable Roti':35}
+quantity={}
+itemsprices={}
+print("....IET CAFE MENU....")
+for key in products:
+    print(key, products[key])
+
+x=0;
+while(x==0):
+    order=input("Enter the product name :")
+    item=products[order]
+    print(item)
+    quan=int(input("Enter the quantity :"))
+    quantity[order]=quan    
+    end=int(input("To process enter 0 or to continue 1:"))
+    if(end==0):
+        x=x+1
+total=0
+for key in quantity:
+    value=quantity[key]*products[key]
+    itemsprices[key]=value
+    total=total+value
+
+print("\n\n\t\t....IET CAFE....")
+
+print ("\nDate:%s-%s-%s \t\t\t Cashier:Bandara\n" % (e.day, e.month, e.year))
+print("Item\t\t\t Qty\t\tPrice\n")
+
+for key in quantity:
+    print(key,"\t\t",quantity[key],"\t\t",itemsprices[key])
+
+print("\n\t\tTotal=",total)
+print("*****************************************")
+print("\t\tThank you")
